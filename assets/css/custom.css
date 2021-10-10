@@ -1,0 +1,152 @@
+
+.popup-overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100vh;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.6);
+	display: none;
+}
+input::placeholder {
+	color: #222 !important;
+	opacity: 0.8; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #222 !important;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #222 !important;
+  }
+.popup {
+	position: absolute;
+	top: -150vh;
+	left: 50vw;
+	transform: translate(-50%,-50%) scale(1.15);
+	width: 400px;
+	height: 430px;
+	background: #f5f5f5;
+	z-index: 20;
+	opacity: 0;
+	transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+body.showLoginForm .popup-overlay {
+	display: block;
+}
+
+body.showLoginForm .popup{
+	top: 50vh;
+	opacity: 1;
+	transform: translate(-50%,-50%) scale(1);
+}
+
+body.showLoginForm nav {
+	z-index: -1;
+}
+
+.popup .popup-close {
+	position: absolute;
+	top:  -10px;
+	right: -10px;
+	width: 40px;
+	height: 40px;
+	background-color: #555;
+	color: #f5f5f5;
+	font-size: 25px;
+	font-weight: 600;
+	text-align: center;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.header {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	color: rgb(0, 0, 0);
+	margin: 20px 0px;
+	z-index: 100;
+}
+
+.popup .form .element {
+	padding: 8px 20px;
+}
+.popup .form .element label {
+	display: block;
+	font-size: 14px;
+	color: #222;
+	margin-bottom: 5px;
+
+}
+.popup .form .element input {
+	width: 100%;
+	padding: 8px 10px;
+	box-sizing: border-box;
+	outline: none;
+	border: 1px solid #aaa;
+	background: #eee;
+	border-radius: 5px;
+}
+
+.popup .form .element button {
+	margin-top: 5px;
+	width: 100%;
+	padding: 10px 0px;
+	text-transform: uppercase;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	font-weight: 600;border-radius: 5px;
+	cursor: pointer;
+	background: #4889da;
+	color: #f5f5f5;
+
+}
+
+lottie-player {
+	position: absolute;
+	top: -100px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 190px;
+	height: 190px;
+	z-index: -1;
+	opacity: 0.5;
+}
+
+@media only screen and (max-width: 600px) {
+	body, html {
+		overflow-x: hidden;
+	}
+	lottie-player {
+		position: relative;
+		width: 120px;
+		height: 120px;
+		top: 0px;
+		opacity: 1;
+	}
+	.header {
+		margin-top: 0;
+	}
+	
+	.popup {
+		position: absolute;
+		top: -150vh;
+		left: 50vw;
+		transform: translate(-50%,-50%) scale(1.15);
+		width: 90vw;
+		height: 90vh;
+		background: #f5f5f5;
+		z-index: 20;
+		opacity: 0;
+		transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+		box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+	}
+	
+}
+
